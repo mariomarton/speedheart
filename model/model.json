@@ -1,0 +1,189 @@
+{
+  "entities": [
+    {
+      "name": "Like",
+      "parent": null,
+      "attr": [
+        {
+          "name": "id",
+          "primary": true,
+          "unique": false,
+          "nullable": false,
+          "type": null
+        },
+        {
+          "name": "time_stamp",
+          "primary": false,
+          "unique": false,
+          "nullable": false,
+          "type": null
+        }
+      ],
+      "transform": {
+        "x": 1523,
+        "y": 597.40625,
+        "width": 110.9921875,
+        "height": 57
+      }
+    },
+    {
+      "name": "User",
+      "parent": null,
+      "attr": [
+        {
+          "name": "id_user",
+          "primary": true,
+          "unique": false,
+          "nullable": false,
+          "type": null
+        },
+        {
+          "name": "email",
+          "primary": false,
+          "unique": true,
+          "nullable": false,
+          "type": null
+        },
+        {
+          "name": "phone_number",
+          "primary": false,
+          "unique": true,
+          "nullable": false,
+          "type": null
+        },
+        {
+          "name": "first_name",
+          "primary": false,
+          "unique": false,
+          "nullable": false,
+          "type": null
+        },
+        {
+          "name": "birth_date",
+          "primary": false,
+          "unique": false,
+          "nullable": false,
+          "type": null
+        },
+        {
+          "name": "attribute",
+          "primary": false,
+          "unique": false,
+          "nullable": false,
+          "type": null
+        }
+      ],
+      "transform": {
+        "x": 1280,
+        "y": 574.203125,
+        "width": 145,
+        "height": 119.203125
+      }
+    }
+  ],
+  "relations": [
+    [
+      {
+        "entity": "User",
+        "identifying": false,
+        "optional": true,
+        "cardinality": 1,
+        "xor": null,
+        "name": null,
+        "transform": {
+          "anchor": {
+            "x": 1425,
+            "y": 584.40625,
+            "edge": 1
+          },
+          "points": [
+            {
+              "x": 1474,
+              "y": 604.90625
+            }
+          ],
+          "manual": false
+        }
+      },
+      {
+        "entity": "Like",
+        "identifying": false,
+        "optional": false,
+        "cardinality": 0,
+        "xor": null,
+        "name": null,
+        "transform": {
+          "anchor": {
+            "x": 1523,
+            "y": 625.40625,
+            "edge": 3
+          },
+          "points": [
+            {
+              "x": 1474,
+              "y": 604.90625
+            }
+          ],
+          "manual": false
+        }
+      }
+    ],
+    [
+      {
+        "entity": "User",
+        "identifying": false,
+        "optional": true,
+        "cardinality": 1,
+        "xor": null,
+        "name": null,
+        "transform": {
+          "anchor": {
+            "x": 1425,
+            "y": 680.40625,
+            "edge": 1
+          },
+          "points": [
+            {
+              "x": 1474,
+              "y": 662.40625
+            }
+          ],
+          "manual": false
+        }
+      },
+      {
+        "entity": "Like",
+        "identifying": false,
+        "optional": false,
+        "cardinality": 0,
+        "xor": null,
+        "name": null,
+        "transform": {
+          "anchor": {
+            "x": 1523,
+            "y": 644.40625,
+            "edge": 3
+          },
+          "points": [
+            {
+              "x": 1474,
+              "y": 662.40625
+            }
+          ],
+          "manual": false
+        }
+      }
+    ]
+  ],
+  "notes": [
+    {
+      "text": "User can't like themselves",
+      "transform": {
+        "x": 1525,
+        "y": 661.40625,
+        "width": 108.703125,
+        "height": 19
+      }
+    }
+  ]
+}
