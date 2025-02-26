@@ -4,7 +4,7 @@
 
 # SpeedHeart
 
-SpeedHeart is a prototype dating web app built using Java, Maven, Spring Boot, JPA, and Thymeleaf. It allows users to create and delete profiles, view other users' profiles from a different user's perspective, and engage in a "like" system with correlated logic.
+SpeedHeart is a prototype dating web app built using Java, Spring Boot, Maven, JPA, and Thymeleaf. It allows users to create and delete profiles, view other users' profiles from a different user's perspective, and engage in a "like" system with correlated logic.
 
 The idea behind this app was to create a dating platform for various animated car characters (hence the name SpeedHeart). However, it can also be used by humans or any other beings! :)
 
