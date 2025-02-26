@@ -9,17 +9,20 @@ import java.util.List;
 
 public class UserDTO {
 
-    private final Long id;
-    private final String firstName;
-    private final String phoneNumber;
-    private final String email;
-    private final String photo;
+    private Long id;
+    private String firstName;
+    private String phoneNumber;
+    private String email;
+    private String photo;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private final Date birthDate;
+    private Date birthDate;
 
     // Lists of likes given and received (only IDs for simplicity)
-    private final List<Long> likesGiven; // IDs of likes given by the user
-    private final List<Long> likesReceived; // IDs of likes received by the user
+    private List<Long> likesGiven; // IDs of likes given by the user
+    private List<Long> likesReceived; // IDs of likes received by the user
+
+    // Default constructor
+    public UserDTO() {}
 
     @JsonCreator
     public UserDTO(
@@ -73,5 +76,37 @@ public class UserDTO {
 
     public String getPhoto() {
         return photo;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public void setLikesGiven(List<Long> likesGiven) {
+        this.likesGiven = likesGiven;
+    }
+
+    public void setLikesReceived(List<Long> likesReceived) {
+        this.likesReceived = likesReceived;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 }

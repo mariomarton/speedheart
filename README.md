@@ -3,9 +3,3 @@ SpeedHeart je zoznamovacia aplikácia (nie len) pre postavy z filmu Cars od Pixa
 
 ## Schéma
 ![Schema](model.jpg)
-
-## Server a Klient
-
-Aplikácia pozostáva z dvoch částí, pre plné spustenie sú nutné obidve:
-- Server: https://gitlab.fit.cvut.cz/ondovmar/tjv-dating-app-semestral-work
-- Klient: https://gitlab.fit.cvut.cz/ondovmar/tjv-client-dating-app-semestral-work

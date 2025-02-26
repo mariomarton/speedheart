@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base :: head" th:with="title='Error'"></head>
+<body>
+<div th:replace="base :: navbar"></div>
+
+<!-- Content -->
+<div class="main-content d-flex flex-column justify-content-center align-items-center text-center">
+    <h2 class="mb-4 text-danger">Sorry, something must have gone wrong 😶‍🌫️</h2>
+    <img th:src="@{error.jpg}" alt="Error Image" class="img-fluid rounded" style="max-width: 1000px; max-height: 450px;">
+</div>
+
+<div th:replace="base :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+stages:
+  - test
+
+test:
+  stage: test
+  image: openjdk:21
+  before_script:
+    - apt-get update && apt-get install -y tar
+    - chmod +x mvnw
+  script:
+    - ./mvnw clean test
+  only:
+    - main
+  artifacts:
+    paths:
+      - target/surefire-reports
+    expire_in: 1 hour

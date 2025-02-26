@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="${title}">SpeedHeart</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+  <style>
+    /* Make the body take up the full height of the viewport */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    /* Main content container to center content */
+    .main-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Footer styling */
+    footer {
+      background-color: #343a40;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="navbar">
+  <div class="container">
+    <a class="navbar-brand" th:href="@{/}">
+      <img th:src="@{speedheart_logo.png}" alt="SpeedHeart Logo" style="height: 70px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#" th:href="@{/signin}">Sign In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" th:href="@{/signup}">Sign Up</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Replaceable Content -->
+<div class="main-content" th:fragment="content">
+  <div class="text-center">
+    <h1>Welcome to SpeedHeart</h1>
+    <p>Default content if not overridden.</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center py-3 mt-auto" th:fragment="footer" style="background-color: #891717;">
+  <div class="container">
+    <p>&copy; 2024-2025 SpeedHeart. <a href="https://github.com/mariomarton" target="_blank">mariomarton on GitHub</a>.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,32 +1,70 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>FastDate | Sign-up</title>
-</head>
+<head th:replace="base :: head" th:with="title='Sign Up'"></head>
 <body>
+<div th:replace="base :: navbar"></div>
 
-<form th:action="@{/user/create}" method="post">
-  <div>
-    <label for="firstName">First Name:</label>
-    <input type="text" id="firstName" name="firstName" required>
+<!-- Content -->
+<div class="main-content">
+  <div class="card shadow p-4" style="width: 100%; max-width: 500px;">
+    <h1 class="text-center mb-4">Sign Up</h1>
+    <form th:action="@{/signup}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter your first name" required>
+        <div class="invalid-feedback">Please provide your first name.</div>
+      </div>
+      <div class="mb-3">
+        <label for="phoneNumber" class="form-label">Phone Number</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" class="form-control"
+               placeholder="Enter your phone number"
+               pattern="[\+0-9]{7,20}"
+               title="Enter a valid phone number (7 to 20 characters, numbers and '+' allowed)"
+               required>
+        <div class="invalid-feedback">Please provide a valid phone number.</div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" name="email" class="form-control"
+               placeholder="Enter your email"
+               pattern=".+@[a-zA-Z0-9]+\.[a-zA-Z]+"
+               title="Enter a valid email address"
+               required>
+        <div class="invalid-feedback">Please provide a valid email address.</div>
+      </div>
+      <div class="mb-3">
+        <label for="birthDate" class="form-label">Birth Date</label>
+        <input type="date" id="birthDate" name="birthDate" class="form-control" required>
+        <div class="invalid-feedback">Please provide your birth date.</div>
+      </div>
+      <div class="mb-3">
+        <label for="photo" class="form-label">Profile Picture</label>
+        <input type="file" id="photo" name="photo" class="form-control" accept="image/*" required>
+        <div class="invalid-feedback">Please upload your profile picture.</div>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Start Exploring</button>
+    </form>
+    <div th:if="${error}" class="text-danger mt-3 text-center" th:text="${error}"></div>
   </div>
-  <div>
-    <label for="phoneNumber">Phone Number:</label>
-    <input type="text" id="phoneNumber" name="phoneNumber" pattern="\d{10}" title="Enter a valid 10-digit phone number" required>
-  </div>
-  <div>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-  </div>
-  <div>
-    <label for="birthDate">Birth Date:</label>
-    <input type="date" id="birthDate" name="birthDate" required>
-  </div>
-  <div>
-    <button type="submit" value="Add">Add</button>
-  </div>
-</form>
+</div>
 
+<div th:replace="base :: footer"></div>
+
+<script>
+  // Enable Bootstrap validation styling
+  (function () {
+    'use strict'
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
+</script>
 </body>
 </html>

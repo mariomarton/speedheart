@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base :: head" th:with="title='Sign In'"></head>
+<body>
+<div th:replace="base :: navbar"></div>
+
+<!-- Content -->
+<div class="main-content">
+  <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
+    <h1 class="text-center mb-4">Sign In</h1>
+
+    <!-- Success Message (if user just Signed Up) -->
+    <div th:if="${successful_signup_msg}" class="alert alert-success text-center" role="alert">
+      Sign-up successful! You can now sign in.
+    </div>
+
+    <!-- Success Message (if user just deleted the account) -->
+    <div th:if="${successful_delete}" class="alert alert-success text-center" role="alert">
+      Account deleted successfully.
+    </div>
+
+    <!-- Error Message -->
+    <div th:if="${error != null and error != ''}" class="alert alert-danger text-center" role="alert">
+      <span th:text="${error}"></span>
+    </div>
+
+    <form action="/signin" method="post">
+      <div class="mb-3">
+        <select name="userId" id="userId" class="form-select" required>
+          <option value="">Select a user</option>
+          <th:block th:each="user : ${users}">
+            <!-- Display user's name, email -->
+            <option th:value="${user.id}"
+                    th:text="${user.firstName + ' (' + user.email + ')'}">
+            </option>
+          </th:block>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Start Exploring</button>
+    </form>
+  </div>
+</div>
+
+<div th:replace="base :: footer"></div>
+</body>
+</html>
